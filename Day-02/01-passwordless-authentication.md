@@ -30,3 +30,22 @@ For target server/ Manage node
    ansible -i inventory all -m "shell" -a "touch ansible"
    ansible -i inventory all -m "shell" -a "touch ansible1"
 
+ ansible-playbook -i inventory first.yml
+
+ ---
+
+- name: Install and Start nginx
+  hosts: all
+  become: root
+
+
+  tasks:
+     - name: Install nginx
+       apt:
+         name: nginx
+         state: present
+      - name: Start nginx
+        service:
+         name: nginx
+         state: started
+
