@@ -15,7 +15,14 @@ ssh-copy-id -f "-o IdentityFile <PATH TO PEM FILE>" ubuntu@<INSTANCE-PUBLIC-IP>
 
 ### Using Password 
 
+For target server/ Manage node
 - Go to the file `/etc/ssh/sshd_config.d/60-cloudimg-settings.conf`
+- Here you can not edit the file so you have to use sudo vi filename
 - Update `PasswordAuthentication yes`
 - Restart SSH -> `sudo systemctl restart ssh`
+- set the password on the target server using command - sudo passwd ubuntu
+
+- For ansible server/Contrl node
+- ssh-copy-id ubuntu@51.20.87.131-public id
+- type yes
 
