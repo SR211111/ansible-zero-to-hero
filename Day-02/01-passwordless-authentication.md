@@ -26,3 +26,7 @@ For target server/ Manage node
 - ssh-copy-id ubuntu@51.20.87.131-public id
 - type yes
 
+ vi inventory
+   ansible -i inventory all -m "shell" -a "touch ansible"
+   ansible -i inventory all -m "shell" -a "touch ansible1"
+
