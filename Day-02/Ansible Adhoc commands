@@ -1,1 +1,4 @@
+Below are the ansible commands i used to while practising 
 
+ ansible -i inventory.yml -m shell -a "touch sayali" all
+ ansible -i inventory.yml -m ping all
