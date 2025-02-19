@@ -13,6 +13,18 @@ ssh-copy-id -f "-o IdentityFile <PATH TO PEM FILE>" ubuntu@<INSTANCE-PUBLIC-IP>
 - "-o IdentityFile <PATH TO PEM FILE>": This option specifies the identity file (private key) to use for the connection. The -o flag passes this option to the underlying ssh command.
 - ubuntu@<INSTANCE-IP>: This is the username (ubuntu) and the IP address of the remote server you want to access.
 
+- Problems i have faced while establising connection via wsl 
+- first you need to move this file from mnt/c/downloads to your homdirectory /home/rautsa
+- mv target.pem /home/rautsa
+   81  cd /home/rautsa
+   82  ls
+   83  sudo chmod 600 target.pem
+   84  ls
+   85  ls -lrt
+   86  ssh-copy-id -f "-o IdentityFile /mnt/c/Users/Didi/Downloads/target.pem" ubuntu@13.48.71.67
+   87  ssh-copy-id -f "-o IdentityFile target.pem" ubuntu@13.48.71.67
+- 
+
 ### Using Password 
 
 For target server/ Manage node
